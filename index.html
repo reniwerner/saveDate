@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: rgb(170, 139, 198);
+    }
+
+    #examDetails {
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div id="examDetails">
+    <h1>Final Exam Details</h1>
+    <p id="examDateTime"></p>
+    <p id="examLocation"></p>
+    <button id="showSummary">Show Project Summary</button>
+    <div id="projectSummary" class="hidden">
+        <h2>Final Project Summary</h2>
+        <p>My project is about am animal adoption website. It is a site where the staff is able to add and delete information about the animals often. The site automatically updates so that users are able to view changes right away.</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        let examDateTime = "Friday May 3rd, at 3:30pm";
+        let examLocation = "Innovation Building";
+        let projectDueDate = "My project is about am animal adoption website. It is a site where the staff is able to add and delete information about the animals often. The site automatically updates so that users are able to view changes right away.";
+
+        $("#examDateTime").text("Final Exam Date & Time: " + examDateTime);
+        $("#examLocation").text("Final Exam Location: " + examLocation);
+
+        
+        $("#showSummary").on("click", function(){
+            $("#projectSummary").slideDown();
+        });
+    });
+</script>
+</body>
+</html>
